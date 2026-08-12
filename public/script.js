@@ -12024,8 +12024,8 @@ jQuery(async function () {
             const ext = file.name.match(/\.(\w+)$/);
             const format = ext?.[1]?.toLowerCase();
 
-            if (!['json', 'jsonl'].includes(format)) {
-                toastr.warning(t`Only JSON and JSONL files are supported for chat imports.`);
+            if (!['txt', 'json', 'jsonl'].includes(format)) {
+                toastr.warning(t`Only TXT, JSON and JSONL files are supported for chat imports.`);
                 continue;
             }
 

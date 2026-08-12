@@ -2,13 +2,16 @@ import fs from 'node:fs';
 import path from 'node:path';
 import readline from 'node:readline';
 import process from 'node:process';
+import { isUtf8 } from 'node:buffer';
 
 import express from 'express';
+import iconv from 'iconv-lite';
 import sanitize from 'sanitize-filename';
 import { sync as writeFileAtomicSync } from 'write-file-atomic';
 import _ from 'lodash';
 
 import validateAvatarUrlMiddleware from '../middleware/validateFileName.js';
+import { importTextChat } from '../chat-import-text.js';
 import {
     getConfigValue,
     humanizedDateTime,
@@ -29,6 +32,27 @@ const throttleInterval = Number(getConfigValue('backups.chat.throttleInterval', 
 const checkIntegrity = !!getConfigValue('backups.chat.checkIntegrity', true, 'boolean');
 
 export const CHAT_BACKUPS_PREFIX = 'chat_';
+
+/**
+ * Decodes common Windows and Unicode text encodings used by exported chats.
+ * @param {Buffer} buffer Uploaded text file
+ * @returns {string} Decoded text
+ */
+function decodeTextBuffer(buffer) {
+    if (buffer.length >= 2 && buffer[0] === 0xFF && buffer[1] === 0xFE) {
+        return buffer.toString('utf16le').replace(/^\uFEFF/, '');
+    }
+
+    if (buffer.length >= 2 && buffer[0] === 0xFE && buffer[1] === 0xFF) {
+        return iconv.decode(buffer, 'utf16-be').replace(/^\uFEFF/, '');
+    }
+
+    if (buffer.length >= 3 && buffer[0] === 0xEF && buffer[1] === 0xBB && buffer[2] === 0xBF) {
+        return buffer.toString('utf8').replace(/^\uFEFF/, '');
+    }
+
+    return isUtf8(buffer) ? buffer.toString('utf8') : iconv.decode(buffer, 'gb18030');
+}
 
 /**
  * Saves a chat to the backups directory.
@@ -713,7 +737,20 @@ router.post('/import', validateAvatarUrlMiddleware, function (request, response)
 
     try {
         const pathToUpload = path.join(request.file.destination, request.file.filename);
-        const data = fs.readFileSync(pathToUpload, 'utf8');
+        const fileBuffer = fs.readFileSync(pathToUpload);
+        const data = format === 'txt'
+            ? decodeTextBuffer(fileBuffer)
+            : fileBuffer.toString('utf8');
+
+        if (format === 'txt') {
+            fs.unlinkSync(pathToUpload);
+            const chat = importTextChat(userName, characterName, data);
+            const fileName = `${characterName} - ${humanizedDateTime()} imported.jsonl`;
+            const filePath = path.join(directoryPath, fileName);
+            fileNames.push(fileName);
+            writeFileAtomicSync(filePath, chat, 'utf8');
+            return response.send({ res: true, fileNames });
+        }
 
         if (format === 'json') {
             fs.unlinkSync(pathToUpload);
