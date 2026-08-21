@@ -4,6 +4,30 @@
         "type": "settings"
     },
     {
+        "filename": "presets/context/私人创作-ChatML.json",
+        "type": "context"
+    },
+    {
+        "filename": "presets/instruct/私人创作-ChatML.json",
+        "type": "instruct"
+    },
+    {
+        "filename": "presets/kobold/私人创作-稳定正文.json",
+        "type": "kobold_preset"
+    },
+    {
+        "filename": "presets/kobold/私人创作-开放探索.json",
+        "type": "kobold_preset"
+    },
+    {
+        "filename": "presets/textgen/私人创作-稳定正文.json",
+        "type": "textgen_preset"
+    },
+    {
+        "filename": "presets/textgen/私人创作-开放探索.json",
+        "type": "textgen_preset"
+    },
+    {
         "filename": "themes/Dark Lite.json",
         "type": "theme"
     },

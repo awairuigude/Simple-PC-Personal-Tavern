@@ -1,0 +1,83 @@
+***
+Welcome to KoboldCpp - Version 1.118.1
+Loading Chat Completions Adapter: C:\Users\29558\AppData\Local\Temp\_MEI27322\kcpp_adapters\AutoGuess.json
+Chat Completions Adapter Loaded
+Forced autofit is selected, moecpu and overridetensors will be set automatically.
+Auto Recommended GPU Layers: 20
+System: Windows 10.0.26100 AMD64 Intel64 Family 6 Model 183 Stepping 1, GenuineIntel
+Detected Available GPU Memory: 8188 MB
+Detected Available RAM: 13279 MB
+Initializing dynamic library: koboldcpp_cublas.dll
+==========
+Namespace(admin=False, admindir='', adminpassword=None, adminunloadtimeout=0, allow_config_onready=False, analyze='', autofit=True, autofitpadding=1200, autoswapmode=False, baseconfig='', batchsize=512, benchmark=None, blasthreads=12, chatcompletionsadapter='AutoGuess', cli=False, config=None, contextsize=12288, debugmode=0, defaultgenamt=2048, device='', downloaddir='', draftamount=4, draftgpulayers=999, draftgpusplit=None, draftmodel='', embeddingsgpu=False, embeddingsmaxctx=4096, embeddingsmodel='', enableguidance=False, exportconfig='', exporttemplate='', failsafe=False, flashattention=False, forceversion=False, foreground=False, gendefaults='', gendefaultsoverwrite=False, genlimit=0, gpulayers=20, highpriority=False, hordeconfig=None, hordegenlen=0, hordekey='', hordemaxctx=0, hordemodelname='', hordeworkername='', host='127.0.0.1', ignoremissing=False, jinja=True, jinja_kwargs='{"enable_thinking": false}', jinja_tools=False, jinjatemplate='', jinjathink='false', launch=False, lora=None, loramult=1.0, lowvram=False, maingpu=-1, maxrequestsize=32, mcpfile='', mmproj='', mmprojcpu=False, model=['F:\\Simple-PC-Personal-Tavern-Local\\models\\qwen2.5-14b-roleplay-zh-q4_k_m.gguf'], model_param='F:\\Simple-PC-Personal-Tavern-Local\\models\\qwen2.5-14b-roleplay-zh-q4_k_m.gguf', moecpu=0, moeexperts=-1, multiplayer=False, multiuser=10, musicdiffusion='', musicembeddings='', musicllm='', musiclowvram=False, musicvae='', noavx2=False, noblas=False, nobostoken=False, nocertify=False, nofastforward=False, noflashattention=False, nommap=False, nommq=False, nomodel=False, nopipelineparallel=False, noshift=False, noswa=False, onready='', overridekv='', overridenativecontext=0, overridetensors='', parallelrequests=1, password=None, pipelineparallel=False, port=5001, port_param=5001, preloadstory='', prompt='', proxy_port=None, quantkv='q8_0', quiet=False, ratelimit=0, reasoningeffort='default', remotetunnel=False, reqtimeout=600, ropeconfig=[0.0, 10000.0], routermode=False, rpcdevice='', rpchost='0.0.0.0', rpcmode='disabled', rpcport=5551, rpctargets='', savedatafile='', sdaudiovae='', sdclamped=0, sdclampedsoft=0, sdclip1='', sdclip2='', sdclipdevice=-2, sdclipgpu=False, sdconfig=None, sdconvdirect='off', sdflashattention=False, sdgendefaults=False, sdlora=[], sdloramult=[1.0], sdmaingpu=None, sdmodel='', sdnotile=False, sdoffloadcpu=False, sdphotomaker='', sdquant=0, sdt5xxl='', sdthreads=0, sdtiledvae=640, sdupscaler='', sdvae='', sdvaeauto=False, sdvaecpu=False, sdvaedevice=-1, sdvramlimit=0, showgui=False, singleinstance=True, skiplauncher=True, smartcache=0, smartcontext=False, splitmode='layer', ssl=None, swapadding=0, tensor_split=None, testmemory=False, threads=12, ttsdir='', ttsgpu=False, ttsmaxlen=4096, ttsmodel='', ttsthreads=0, ttswavtokenizer='', unpack='', usecpu=False, usecuda=['0'], usemlock=False, usemmap=False, usemtp=False, useswa=False, usevulkan=None, version=False, visionmaxres=1024, visionmaxtokens=-1, visionmintokens=-1, websearch=False, whispermodel='')
+==========
+Loading Text Model: F:\Simple-PC-Personal-Tavern-Local\models\qwen2.5-14b-roleplay-zh-q4_k_m.gguf
+Load Text Model OK: True
+Chat completion heuristic: ChatML (Generic)
+Embedded KoboldAI Lite loaded.
+Embedded API docs loaded.
+Llama.cpp UI loaded.
+======
+Active Modules: TextGeneration
+Inactive Modules: ImageGeneration VoiceRecognition MultimodalVision MultimodalAudio NetworkMultiplayer ApiKeyPassword WebSearchProxy TextToSpeech VectorEmbeddings AdminControl MCPBridge MusicGen RouterMode
+Enabled APIs: KoboldCppApi OpenAiApi OllamaApi AnthropicApi
+Note: For third party Ollama API Emulation, you should set the port to 11434.
+Starting Kobold API on port 5001 at http://127.0.0.1:5001/api/
+Starting OpenAI Compatible API on port 5001 at http://127.0.0.1:5001/v1/
+Starting llama.cpp secondary WebUI at http://127.0.0.1:5001/lcpp/
+======
+Please connect to custom endpoint at http://127.0.0.1:5001
+
+The reported GGUF Arch is: qwen2
+Arch Category: 24
+
+---
+Identified as GGUF model.
+Attempting to Load...
+---
+Using automatic RoPE scaling for GGUF. If the model has custom RoPE settings, they'll be used directly instead!
+System Info: AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | AVX512_BF16 = 0 | AMX_INT8 = 0 | FMA = 1 | NEON = 0 | SVE = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | RISCV_VECT = 0 | WASM_SIMD = 0 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 1 | 
+Number of Backends: 3
+Backend 0: CUDA
+Backend 1: RPC
+Backend 2: CPU
+CUDA MMQ: True
+---
+Initializing CUDA/HIP, please wait, the following step may take a few minutes (only for first launch)...
+---
+
+Attempting to use llama.cpp's automating fitting code. This will override all your layer configs, may or may not work!
+Autofit Reserve Space: 1200 MB
+Autofit Success: 1, Autofit Result: -c 12416 -ngl 28
+
+This model does not use SWA
+Automatic RoPE Scaling: Using model internal value.
+Threadpool set to 12 threads and 12 blasthreads...
+
+This architecture has explicitly disabled the BOS token - if you need it, you must add it manually.
+Starting model warm up, please wait a moment...
+
+Processing Prompt [BATCH] (0 / 111 tokens)Processing Prompt [BATCH] (111 / 111 tokens)
+Generating (1 / 220 tokens)Generating (2 / 220 tokens)Generating (3 / 220 tokens)Generating (4 / 220 tokens)Generating (5 / 220 tokens)Generating (6 / 220 tokens)Generating (7 / 220 tokens)Generating (8 / 220 tokens)Generating (9 / 220 tokens)Generating (10 / 220 tokens)Generating (11 / 220 tokens)Generating (12 / 220 tokens)Generating (13 / 220 tokens)Generating (14 / 220 tokens)Generating (15 / 220 tokens)Generating (16 / 220 tokens)Generating (17 / 220 tokens)Generating (18 / 220 tokens)Generating (19 / 220 tokens)Generating (20 / 220 tokens)Generating (21 / 220 tokens)Generating (22 / 220 tokens)Generating (23 / 220 tokens)Generating (24 / 220 tokens)
+(EOS token triggered! ID:151645)
+[21:27:47] CtxLimit:135/12288, Init:0.20s, Processed:111 in 0.42s (263.66T/s), Generated:24/220 in 2.61s (9.20T/s), Total:3.23s
+Processing Prompt [BATCH] (0 / 103 tokens)Processing Prompt [BATCH] (103 / 103 tokens)
+Generating (1 / 500 tokens)Generating (2 / 500 tokens)Generating (3 / 500 tokens)Generating (4 / 500 tokens)Generating (5 / 500 tokens)Generating (6 / 500 tokens)Generating (7 / 500 tokens)Generating (8 / 500 tokens)Generating (9 / 500 tokens)Generating (10 / 500 tokens)Generating (11 / 500 tokens)Generating (12 / 500 tokens)Generating (13 / 500 tokens)Generating (14 / 500 tokens)Generating (15 / 500 tokens)Generating (16 / 500 tokens)Generating (17 / 500 tokens)Generating (18 / 500 tokens)Generating (19 / 500 tokens)Generating (20 / 500 tokens)Generating (21 / 500 tokens)Generating (22 / 500 tokens)Generating (23 / 500 tokens)Generating (24 / 500 tokens)Generating (25 / 500 tokens)Generating (26 / 500 tokens)Generating (27 / 500 tokens)
+(EOS token triggered! ID:151645)
+[21:29:07] CtxLimit:172/12288, Init:0.00s, Processed:103 in 0.50s (204.37T/s), Generated:27/500 in 3.04s (8.90T/s), Total:3.54s
+Processing Prompt [BATCH] (0 / 69 tokens)Processing Prompt [BATCH] (69 / 69 tokens)
+Generating (1 / 400 tokens)Generating (2 / 400 tokens)Generating (3 / 400 tokens)Generating (4 / 400 tokens)Generating (5 / 400 tokens)Generating (6 / 400 tokens)Generating (7 / 400 tokens)Generating (8 / 400 tokens)Generating (9 / 400 tokens)Generating (10 / 400 tokens)Generating (11 / 400 tokens)Generating (12 / 400 tokens)Generating (13 / 400 tokens)Generating (14 / 400 tokens)Generating (15 / 400 tokens)Generating (16 / 400 tokens)Generating (17 / 400 tokens)Generating (18 / 400 tokens)Generating (19 / 400 tokens)Generating (20 / 400 tokens)Generating (21 / 400 tokens)Generating (22 / 400 tokens)Generating (23 / 400 tokens)Generating (24 / 400 tokens)Generating (25 / 400 tokens)Generating (26 / 400 tokens)Generating (27 / 400 tokens)
+(EOS token triggered! ID:151645)
+[21:30:22] CtxLimit:101/12288, Init:0.00s, Processed:69 in 0.61s (113.30T/s), Generated:27/400 in 2.88s (9.37T/s), Total:3.49s
+Processing Prompt [BATCH] (0 / 116 tokens)Processing Prompt [BATCH] (116 / 116 tokens)
+Generating (1 / 700 tokens)Generating (2 / 700 tokens)Generating (3 / 700 tokens)Generating (4 / 700 tokens)Generating (5 / 700 tokens)Generating (6 / 700 tokens)Generating (7 / 700 tokens)Generating (8 / 700 tokens)Generating (9 / 700 tokens)Generating (10 / 700 tokens)Generating (11 / 700 tokens)Generating (12 / 700 tokens)Generating (13 / 700 tokens)Generating (14 / 700 tokens)Generating (15 / 700 tokens)Generating (16 / 700 tokens)
+(EOS token triggered! ID:151645)
+[21:30:24] CtxLimit:137/12288, Init:0.00s, Processed:116 in 0.41s (282.93T/s), Generated:16/700 in 1.68s (9.51T/s), Total:2.09s
+Processing Prompt [BATCH] (0 / 76 tokens)Processing Prompt [BATCH] (76 / 76 tokens)
+Generating (1 / 500 tokens)Generating (2 / 500 tokens)Generating (3 / 500 tokens)Generating (4 / 500 tokens)Generating (5 / 500 tokens)Generating (6 / 500 tokens)Generating (7 / 500 tokens)Generating (8 / 500 tokens)Generating (9 / 500 tokens)Generating (10 / 500 tokens)Generating (11 / 500 tokens)Generating (12 / 500 tokens)Generating (13 / 500 tokens)Generating (14 / 500 tokens)
+(EOS token triggered! ID:151645)
+[21:30:26] CtxLimit:90/12288, Init:0.05s, Processed:76 in 0.39s (195.37T/s), Generated:14/500 in 1.45s (9.66T/s), Total:1.88s
+Processing Prompt [BATCH] (0 / 82 tokens)Processing Prompt [BATCH] (82 / 82 tokens)
+Generating (1 / 500 tokens)Generating (2 / 500 tokens)Generating (3 / 500 tokens)Generating (4 / 500 tokens)Generating (5 / 500 tokens)Generating (6 / 500 tokens)Generating (7 / 500 tokens)Generating (8 / 500 tokens)Generating (9 / 500 tokens)Generating (10 / 500 tokens)Generating (11 / 500 tokens)Generating (12 / 500 tokens)Generating (13 / 500 tokens)Generating (14 / 500 tokens)Generating (15 / 500 tokens)Generating (16 / 500 tokens)Generating (17 / 500 tokens)Generating (18 / 500 tokens)Generating (19 / 500 tokens)Generating (20 / 500 tokens)Generating (21 / 500 tokens)Generating (22 / 500 tokens)Generating (23 / 500 tokens)Generating (24 / 500 tokens)Generating (25 / 500 tokens)Generating (26 / 500 tokens)Generating (27 / 500 tokens)Generating (28 / 500 tokens)Generating (29 / 500 tokens)Generating (30 / 500 tokens)Generating (31 / 500 tokens)Generating (32 / 500 tokens)Generating (33 / 500 tokens)Generating (34 / 500 tokens)Generating (35 / 500 tokens)Generating (36 / 500 tokens)Generating (37 / 500 tokens)Generating (38 / 500 tokens)Generating (39 / 500 tokens)Generating (40 / 500 tokens)Generating (41 / 500 tokens)Generating (42 / 500 tokens)Generating (43 / 500 tokens)Generating (44 / 500 tokens)Generating (45 / 500 tokens)Generating (46 / 500 tokens)Generating (47 / 500 tokens)Generating (48 / 500 tokens)Generating (49 / 500 tokens)Generating (50 / 500 tokens)Generating (51 / 500 tokens)Generating (52 / 500 tokens)Generating (53 / 500 tokens)Generating (54 / 500 tokens)Generating (55 / 500 tokens)Generating (56 / 500 tokens)Generating (57 / 500 tokens)Generating (58 / 500 tokens)
+(EOS token triggered! ID:151645)
+[21:30:33] CtxLimit:140/12288, Init:0.04s, Processed:82 in 0.39s (210.26T/s), Generated:58/500 in 6.28s (9.23T/s), Total:6.72s
